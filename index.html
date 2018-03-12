@@ -179,7 +179,7 @@
       <p><a href="#">Link</a></p> -->
     </div>
     <div class="col-sm-8 text-left">
-      <h1>Methods and Examples for Diffraction in Physics Based Rendering</h1>
+      <h1>Concepts and Examples</h1>
       <p>
         When light hits a surface, some of it is reflected back into the environment.
         Inorder to simplfy modelling this process we make the following assumptions:
@@ -225,15 +225,39 @@
             where $h \approx 6.626\times 10^{-34} \frac{m^2 kg}{s}$ is Plank's constant
             and $c \approx 2.9979\times 10^8 \frac{m}{s}$ is the speed of light.
           </li>
+          <li>
+            <b> Flux </b>: The amount of light passing through an area per time is given
+            is given by the flux $ \Phi = \dfrac{dQ}{dt}$ where $Q$ is the energy of the light.
+          </li>
+          <li>
+            <b> Irradiance </b>: The density of flux arriving at or reflected by a surface is called irradiance.
+            We write $E = \dfrac{\Phi}{A}$ where $A$ is the area of the surface and $\Phi$ the flux at the surface or $E = \dfrac{d\Phi(p)}{dA}$
+            where $p$ is a point on the surface.
+          </li>
         </ul>
+        <p>
+          It is important to note that in the definition of irradiance above, the area $A$ is
+          measured with respect to the surface. If the direction of the light is orthogonal to
+          the surface, $A^\bot$ measured perpendicular to the path of the light
+          is the same as $A$ on the surface. Otherwise we need to apply <b> Lambert's Law: </b>
+        </p>
 
         <div class="imagebox" style="width:45%">
           <img src="lambert.png" alt="Lambert's Law">
           <div class="container" style="width:100%">
             <hr>
-            <p>Figure 1: Lambert's Law.</p>
+            <p>Lambert's Law: $ E = \dfrac{\Phi}{A} = \dfrac{\Phi cos \theta}{A^\bot} $</p>
           </div>
         </div>
+
+        <p>
+          There is one more quatity we need to define, before we can introduce the BRDF.
+          <b> Radiance </b> is the flux density per unit area per unit solid angle.
+          Solid angles are the three-dimensional analogue of angles we know from plane
+          geometry. They are measured in steradians ($sr$). A unit sphere is has $4\pi sr$
+          and the solid angle of an object at a vertex is the area of its projection
+          onto a unit sphere around that vertex.
+        </p>
 
         <div class="imagebox" style="width:65%">
           <img src="BRDF_input.png" alt="input quantities for BRDF">
@@ -252,13 +276,6 @@
         </div>
 
         <p class="text-body text">
-          asdjs sdpweopw epwewpoe pweojopwejfwope fopweojfopwejfopwjfpowejfpowejfpowjfpowjfwpeofwefwe
-          wefwefpwefhwiehfowiefw
-          fwefwioehfowiehfwefwehfowheiowhfoiwehfiownfwf ewiwhoifwhw eifheo wiehfiow eoiwfhw e hfo weh
-          weihfo w wei howeoiw hweioh owhewioh woeih oweoie wheoiweht ww
-          sdssd
-
-          $ x = 1 $
         </p>
       </section>
     </div>
@@ -276,7 +293,8 @@
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <h3>References</h3>
+  <p>...</p>
 </footer>
 
 </body>
