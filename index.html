@@ -135,7 +135,6 @@
       tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
     });
   </script>
-  <script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
   <!-- end of mathjax configuration -->
 </head>
@@ -179,7 +178,7 @@
       <p><a href="#">Link</a></p> -->
     </div>
     <div class="col-sm-8 text-left">
-      <h1>Concepts and Examples</h1>
+      <h1>Concepts Behind Rendering Diffraction</h1>
       <p>
         When light hits a surface, some of it is reflected back into the environment.
         Inorder to simplfy modelling this process we make the following assumptions:
@@ -246,34 +245,87 @@
           <img src="lambert.png" alt="Lambert's Law">
           <div class="container" style="width:100%">
             <hr>
-            <p>Lambert's Law: $ E = \dfrac{\Phi}{A} = \dfrac{\Phi cos \theta}{A^\bot} $</p>
+            <p>Lambert's Law: $ E = \dfrac{\Phi}{A} = \dfrac{\Phi\; cos\; \theta}{A^\bot} $</p>
           </div>
         </div>
 
         <p>
           There is one more quatity we need to define, before we can introduce the BRDF.
-          <b> Radiance </b> is the flux density per unit area per unit solid angle.
+          The radiance will relate the irradiance to the direction of the light. As
+          we are dealing with three-dimensional space, we use solid angles to describe
+          the direction of the light.
+        </p>
+        <p>
           Solid angles are the three-dimensional analogue of angles we know from plane
-          geometry. They are measured in steradians ($sr$). A unit sphere is has $4\pi sr$
+          geometry. They are measured in steradians ($sr$). A unit sphere has $4\pi\; sr$
           and the solid angle of an object at a vertex is the area of its projection
           onto a unit sphere around that vertex.
+        </p>
+        <p>
+          Let $\omega$ now denote the direction of the light and $E_\omega$ the irradiance
+          at a surface perpendicular to $\omega$. Then the <b> radiance </b> at a point $p$
+          is defined to be:
+          \[ L (p, \omega) = \frac{d E_\omega(p)}{d\omega} = \frac{d \Phi(p)}{d\omega \; dA^\bot} \]
+          From the definitons above, it follows that the radiance is also flux density
+          per unit area per unit solid angle.
+        </p>
+        <!--Citation:
+        Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.6 Surface Reflection. In: Physically based rendering :
+        From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.  -->
+        <p>
+          Now we can define the <b>bidirectional reflectance distribution function</b>.
+          The BRDF is a function $f(p, \omega_r, \omega_i)$ describing the reflection
+          from a surface at a point $p$ with incident light from the direction $\omega_i$
+          and reflected light exiting in the direction $\omega_r$.
+        </p>
+        <p>
+          As $\omega_r$ and $\omega_i$ are directions in three-dimensional space,
+          $f$ is actually a function of four variables and the point $p$. Note that
+          $\omega_i$ and $\omega_r$ are both facing away from $p$.
         </p>
 
         <div class="imagebox" style="width:65%">
           <img src="BRDF_input.png" alt="input quantities for BRDF">
           <div class="container" style="width:100%">
             <hr>
-            <p>Figure 2: The input parameters of a BRDF.</p>
+            <p>The input parameters of a BRDF are the angles $\theta_i$,
+              $\phi_i$, $\theta_r$ and $\phi_r$.</p>
           </div>
         </div>
+
+        We want to relate the reflected radiance $L_r(p, \omega_r)$ to the incident
+        radiance $L_i(p, \omega_i)$. Recall the definiton of radiance above. We need
+        to consider differential cones of directions around $\omega_i$ and $\omega_r$.
 
         <div class="imagebox" style="width:65%">
           <img src="BRDF_output.png" alt="output of BRDF">
           <div class="container" style="width:100%">
             <hr>
-            <p>Figure 3: The output of a BRDF.</p>
+            <p>Differential cones of directions for $\omega_i$ and $\omega_i$
+              needed to define the BRDF in terms of irradiance $E(p, \omega_i)$
+              and reflected radiance $L_r(p, \omega_r)$.</p>
           </div>
         </div>
+
+        <p>
+          Using the definition of radiance above and Lambert's Law we get:
+          \[
+            dE(p, \omega_i) = dL_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i
+          \]
+          As we assumed <i> linearity </i> above i.e. more incident light
+          corresponds to more reflected light etc., we also know that
+          \[
+            dL_r(p, \omega_r)\propto dE(p, \omega_i)
+          \]
+          The BRDF of a surface gives us the constant of proportionality for
+          relation above with respect to a point $p$ with incident light from the direction $\omega_i$
+          and reflected light exiting in the direction $\omega_r$. The BRDF is
+          returns the ratio of differential reflected radiance to differential incident irradiance:
+          \[
+            f(p, \omega_r, \omega_i) = \frac{dL_r(p, \omega_r)}{dE(p, \omega_i)}
+             = \frac{dL_r(p, \omega_r)}{dL_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i}
+          \]
+        </p>
 
         <p class="text-body text">
         </p>
