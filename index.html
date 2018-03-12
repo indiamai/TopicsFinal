@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Concepts Behind Rendering Diffraction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- replace with our own css? -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 100%}
+    /*can set to px explicitly, how to span page?*/
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      /*background-color: #f1f1f1;*/
+      height: 100%;
+      bottom: 0;
+      position: relative;
+    }
+
+    div.ul {
+      position: relative;
+    }
+
+    div.imagebox {
+      display: block;
+      width: 80%;
+      position: relative;
+      margin-top: .5cm;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    img {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+
+    div.container {
+      display: block;
+      text-align: center;
+      padding: 10px 20px;
+      position: relative;
+      margin-bottom: .5cm;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+
+    /*ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }*/
+
+    /*li {
+        float: left;
+    }*/
+
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+        color: white;
+    }
+
+    li.dropdown {
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+  </style>
+  <!-- mathjax needed to display equations, just write them like in LaTeX-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <li><a href="https://www.doc.ic.ac.uk/~imm1117/">Home</a></li>
+        <li>
+        <li class="dropdown">
+          <a class="dropbtn">Menu</a>
+          <div class="dropdown-content">
+            <a href="https://www.doc.ic.ac.uk/~imm1117/">Link 1</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/">Link 2</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/">Link 3</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://www.doc.ic.ac.uk/~hms4017/">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p> -->
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Methods and Examples for Diffraction in Physics Based Rendering</h1>
+      <p>
+        When light hits a surface, some of it is reflected back into the environment.
+        Inorder to simplfy modelling this process we make the following assumptions:
+          <!--Citation:
+          Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.4 Radiometry. In: Physically based rendering :
+          From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.  -->
+        </p>
+        <ul>
+          <li>
+            <b>Linearity</b>: Two inputs combined have the same effect on the optical system
+            as there indivdual consequences combined.
+          </li>
+          <li>
+            <b>Energy conservation</b>: The amount of scattered light is less than or equal
+            to the amount of light that hit the surface.
+          </li>
+          <li>
+            <b>No polarization</b>: Hence, light can be described only by its wavelength.
+          </li>
+          <li>
+            <b>No flourescence or phosphorescence</b>:
+            Therefore, light of different wavelengths and at different times can
+            be consider seperately. As the surface cannot store the light or
+            emit light of other wavelengths.
+          </li>
+        </ul>
+      </p>
+      <p>
+        There are two main aspects to consider: the directional distribution and the spectral distribution.
+      </p>
+      <hr>
+      <section id="brdf">
+        <h2> Bidirectional Reflectance Distribution Function</h2>
+        <p class="text-body text">
+          A bidirectional reflectance distribution function describes the directional distribution of
+          reflected light from a surface. It is a central part of a rendering program. Lets first consider
+          some of the required physical quantities:
+        </p>
+        <ul>
+          <li>
+            <b> Energy </b>: The photons of light with wavelength $\lambda$ each have the energy
+            $ Q = \dfrac{hc}{\lambda}$
+            where $h \approx 6.626\times 10^{-34} \frac{m^2 kg}{s}$ is Plank's constant
+            and $c \approx 2.9979\times 10^8 \frac{m}{s}$ is the speed of light.
+          </li>
+        </ul>
+
+        <div class="imagebox" style="width:45%">
+          <img src="lambert.png" alt="Lambert's Law">
+          <div class="container" style="width:100%">
+            <hr>
+            <p>Figure 1: Lambert's Law.</p>
+          </div>
+        </div>
+
+        <div class="imagebox" style="width:65%">
+          <img src="BRDF_input.png" alt="input quantities for BRDF">
+          <div class="container" style="width:100%">
+            <hr>
+            <p>Figure 2: The input parameters of a BRDF.</p>
+          </div>
+        </div>
+
+        <div class="imagebox" style="width:65%">
+          <img src="BRDF_output.png" alt="output of BRDF">
+          <div class="container" style="width:100%">
+            <hr>
+            <p>Figure 3: The output of a BRDF.</p>
+          </div>
+        </div>
+
+        <p class="text-body text">
+          asdjs sdpweopw epwewpoe pweojopwejfwope fopweojfopwejfopwjfpowejfpowejfpowjfpowjfwpeofwefwe
+          wefwefpwefhwiehfowiefw
+          fwefwioehfowiehfwefwehfowheiowhfoiwehfiownfwf ewiwhoifwhw eifheo wiehfiow eoiwfhw e hfo weh
+          weihfo w wei howeoiw hweioh owhewioh woeih oweoie wheoiweht ww
+          sdssd
+
+          $ x = 1 $
+        </p>
+      </section>
+    </div>
+
+
+    <div class="col-sm-2 sidenav">
+      <!-- <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
