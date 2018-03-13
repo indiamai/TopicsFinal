@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Home</a></li> -->
-        <li><a href="https://www.doc.ic.ac.uk/~imm1117/">Home</a></li>
+        <li><a href="../../index.html">Home</a></li>
         <li>
         <li class="dropdown">
           <a class="dropbtn">Menu</a>
@@ -60,24 +60,21 @@
       <h1>Concepts Behind Rendering Diffraction</h1>
       <p>
         When light hits a surface, some of it is reflected back into the environment.
-        Inorder to simplfy modelling this process we make the following assumptions:
-          <!--Citation:
-          Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.4 Radiometry. In: Physically based rendering :
-          From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.  -->
+        Inorder to simplfy modelling this process we make the following assumptions [<a href="#Pharr54">1</a>]:
         </p>
         <ul>
-          <li>
+          <li class = "spaced">
             <b>Linearity</b>: Two inputs combined have the same effect on the optical system
             as there indivdual consequences combined.
           </li>
-          <li>
+          <li class = "spaced">
             <b>Energy conservation</b>: The amount of scattered light is less than or equal
             to the amount of light that hit the surface.
           </li>
-          <li>
+          <li class = "spaced">
             <b>No polarization</b>: Hence, light can be described only by its wavelength.
           </li>
-          <li>
+          <li class = "spaced">
             <b>No flourescence or phosphorescence</b>:
             Therefore, light of different wavelengths and at different times can
             be consider seperately. As the surface cannot store the light or
@@ -98,17 +95,17 @@
           some of the required physical quantities:
         </p>
         <ul>
-          <li>
+          <li class = "spaced">
             <b> Energy </b>: The photons of light with wavelength $\lambda$ each have the energy
             $ Q = \dfrac{hc}{\lambda}$
             where $h \approx 6.626\times 10^{-34} \frac{m^2 kg}{s}$ is Plank's constant
             and $c \approx 2.9979\times 10^8 \frac{m}{s}$ is the speed of light.
           </li>
-          <li>
+          <li class = "spaced">
             <b> Flux </b>: The amount of light passing through an area per time is given
             is given by the flux $ \Phi = \dfrac{dQ}{dt}$ where $Q$ is the energy of the light.
           </li>
-          <li>
+          <li class = "spaced">
             <b> Irradiance </b>: The density of flux arriving at or reflected by a surface is called irradiance.
             We write $E = \dfrac{\Phi}{A}$ where $A$ is the area of the surface and $\Phi$ the flux at the surface or $E = \dfrac{d\Phi(p)}{dA}$
             where $p$ is a point on the surface.
@@ -149,11 +146,8 @@
           From the definitons above, it follows that the radiance is also flux density
           per unit area per unit solid angle.
         </p>
-        <!--Citation:
-        Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.6 Surface Reflection. In: Physically based rendering :
-        From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.  -->
         <p>
-          Now we can define the <b>bidirectional reflectance distribution function</b>.
+          Now we can define the <b>bidirectional reflectance distribution function</b> [<a href="#Pharr56">2</a>].
           The BRDF is a function $f(p, \omega_r, \omega_i)$ describing the reflection
           from a surface at a point $p$ with incident light from the direction $\omega_i$
           and reflected light exiting in the direction $\omega_r$.
@@ -233,9 +227,8 @@
           <img src="../../img/hannah/cd_micro.jpg" alt="details of CD surface">
           <div class="container" style="width:100%">
             <hr>
-            <p>Micrograph of a CD</p>
+            <p>Micrograph of a CD [<a href="cd">3</a>]</p>
           </div>
-                <!--Image: https://en.wikipedia.org/wiki/File:Afm_cd-rom.jpg -->
         </div>
 
 
@@ -247,11 +240,11 @@
           </div>
         </div>
 
-        <div class="imagebox" style="width:50%">
+        <div class="imagebox" style="width:70%">
           <img src="../../img/hannah/xenopeltis.jpg" alt="AFM of xenopeltis skin">
           <div class="container" style="width:100%">
             <hr>
-            <p>The skin of a sunbeam snake (xenopeltis) under atomic force microscopy.</p>
+            <p>The skin of a sunbeam snake (xenopeltis) under atomic force microscopy [<a href="xeno">4</a>].</p>
           </div>
           <!-- Am I allowed to use this image? -->
           <!-- Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188. -->
@@ -275,9 +268,24 @@
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <h3>References</h3>
-  <p>...</p>
+<footer>
+  <h3 class = "text-center">References</h3>
+  <ol>
+    <li id = "Pharr54"  class = "spaced">
+      Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.4 Radiometry. In: Physically based rendering :
+      From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.
+    </li>
+    <li id="Pharr56"  class = "spaced">
+      Pharr, M., & Humphreys, Greg, Ph. D. (2010). 5.6 Surface Reflection. In: Physically based rendering :
+      From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.
+    </li>
+    <li id= "cd" class="spaced">
+      https://en.wikipedia.org/wiki/File:Afm_cd-rom.jpg
+    </li>
+    <li id="xeno" class="spaced">
+      Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188.
+    </li>
+  </ol>
 </footer>
 
 </body>

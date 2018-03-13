@@ -56,6 +56,9 @@
     background-color: #555;
     color: white;
     padding: 15px;
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: left;
   }
 
   /* On small screens, set height to 'auto' for sidenav and grid */
@@ -65,6 +68,10 @@
       padding: 15px;
     }
     .row.content {height:auto;}
+  }
+
+  li.spaced {
+   margin: 10px 0;
   }
 
   li a, .dropbtn {
