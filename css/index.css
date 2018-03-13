@@ -1,3 +1,27 @@
+body{
+  margin:0%;
+  font-family: arial, sans-serif;
+}
+
+h1,h2,h3,p{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.text{
+  position:relative;
+  text-align:center;
+  margin:1%;
+}
+
 .pages{
   width:100%;
   height:100%;
@@ -15,33 +39,25 @@
 
 .text-top{
   font-size:5em;
-//  color: #4A6FB6;
-  color: #FFFFFF;
+  color: #000000;
 //  text-shadow: 0.02em 0.02em #FFFFFF, 0.02em -0.02em #FFFFFF, -0.02em -0.02em #FFFFFF, -0.02em 0.02em #FFFFFF, 0 0.02em #FFFFFF, 0 -0.02em #FFFFFF, 0.02em 0 #FFFFFF, -0.02em 0 #FFFFFF;
   text-transform: uppercase;
 }
 
 .text-main{
   font-size:6em;
-//  color: #4A6FB6;
-  color: #FFFFFF;
+  color: #000000;
 //  text-shadow: 0.02em 0.02em #FFFFFF, 0.02em -0.02em #FFFFFF, -0.02em -0.02em #FFFFFF, -0.02em 0.02em #FFFFFF, 0 0.02em #FFFFFF, 0 -0.02em #FFFFFF, 0.02em 0 #FFFFFF, -0.02em 0 #FFFFFF;
   text-transform: uppercase;
 }
 
 .text-bottom{
   font-size:2em;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .extern{
   text-decoration: underline;
-}
-
-.text{
-  position: relative;
-  text-align:center;
-  margin:1%;
 }
 
 .next{
@@ -83,11 +99,11 @@
   background-repeat: no-repeat;
   background-position: center;
   transition-duration: 0.3s;
-  background-color: rgba(45,116,255,0.5);
+  background-color: rgba(67,70,138,0.5);
 }
 
 #intro{
-  background: url("../img/bg-home.jpg");
+  background: url("../img/bg-intro.jpg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,7 +115,6 @@
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #8adee8;
 }
 
 #team{
@@ -107,7 +122,7 @@
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #49509d;
+  background-color: rgba(133, 161, 239, 0.6);
 }
 
 .seperator{
