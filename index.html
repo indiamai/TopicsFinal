@@ -44,6 +44,7 @@
     }
 
     img {
+      padding-top: .5cm;
       position: relative;
       display: block;
       margin-left: auto;
@@ -74,18 +75,6 @@
       }
       .row.content {height:auto;}
     }
-
-    /*ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    }*/
-
-    /*li {
-        float: left;
-    }*/
 
     li a, .dropbtn {
         display: inline-block;
@@ -311,7 +300,7 @@
         <p>
           Using the definition of radiance above and Lambert's Law we get:
           \[
-            dE(p, \omega_i) = dL_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i
+            dE(p, \omega_i) = L_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i
           \]
           As we assumed <i> linearity </i> above i.e. more incident light
           corresponds to more reflected light etc., we also know that
@@ -324,13 +313,64 @@
           returns the ratio of differential reflected radiance to differential incident irradiance:
           \[
             f(p, \omega_r, \omega_i) = \frac{dL_r(p, \omega_r)}{dE(p, \omega_i)}
-             = \frac{dL_r(p, \omega_r)}{dL_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i}
+             = \frac{dL_r(p, \omega_r)}{L_i(p, \omega_i)\; cos\; \theta_i \; d\omega_i}
           \]
         </p>
-
-        <p class="text-body text">
+        <p>
+          Some important qualities of a BRDF are:
+          <ul>
+            <li> <b> Reciprocity</b>: Exchanging the directions of incident and
+              reflected light does not change the value of the BRDF,
+               i.e. $f(p, \omega_r, \omega_i) = f(p, \omega_i, \omega_r)$.
+             </li>
+             <li> <b> Energy conservation</b>: As in our assumptions above, the
+               amount of reflected light is less than or equal to the amount of
+               incident light.
+          </ul>
         </p>
+        <hr>
       </section>
+
+      <section id = "diffraction">
+        <h2> Diffraction </h2>
+        <p>
+          Surfaces in nature are not perfectly smooth and especially when the details
+          on the surface have a size similar to the wavelenth of light (visible light
+          has a wavelength of 400 to 700nm) diffraction can occur and cause the surface
+          to appear in different colors when viewing from different angles, i.e. iridescence.
+        </p>
+        <div class="imagebox" style="width:50%">
+          <img src="cd_micro.jpg" alt="details of CD surface">
+          <div class="container" style="width:100%">
+            <hr>
+            <p>Micrograph of a CD</p>
+          </div>
+                <!--Image: https://en.wikipedia.org/wiki/File:Afm_cd-rom.jpg -->
+        </div>
+
+
+        <div class="imagebox" style="width:95%">
+          <img src="diffraction.png" alt="diffraction on nanostructure">
+          <div class="container" style="width:100%">
+            <hr>
+            <p> Diffraction at surface details</p>
+          </div>
+        </div>
+
+        <div class="imagebox" style="width:50%">
+          <img src="xenopeltis.jpg" alt="AFM of xenopeltis skin">
+          <div class="container" style="width:100%">
+            <hr>
+            <p>The skin of a sunbeam snake (xenopeltis) under atomic force microscopy.</p>
+          </div>
+          <!-- Am I allowed to use this image? -->
+          <!-- Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188. -->
+        </div>
+
+        <!-- Sciammarella, Cesar A., & Sciammarella, Federico M. (2012). Optical Methods – Interference and Diffraction of Light. In Experimental Mechanics of Solids (pp. 155-181). Chichester, UK: John Wiley & Sons. -->
+      </section>
+
+      <!-- Stam, J. (1999). Diffraction shaders. Proceedings of the 26th Annual Conference on Computer Graphics and Interactive Techniques, 101-110. -->
     </div>
 
 
