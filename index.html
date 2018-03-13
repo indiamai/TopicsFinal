@@ -7,117 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- replace with our own css? -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 100%}
-    /*can set to px explicitly, how to span page?*/
-
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      /*background-color: #f1f1f1;*/
-      height: 100%;
-      bottom: 0;
-      position: relative;
-    }
-
-    div.ul {
-      position: relative;
-    }
-
-    div.imagebox {
-      display: block;
-      width: 80%;
-      position: relative;
-      margin-top: .5cm;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: white;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    img {
-      padding-top: .5cm;
-      position: relative;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-    }
-
-    div.container {
-      display: block;
-      text-align: center;
-      padding: 10px 20px;
-      position: relative;
-      margin-bottom: .5cm;
-    }
-
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;}
-    }
-
-    li a, .dropbtn {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover, .dropdown:hover .dropbtn {
-        color: white;
-    }
-
-    li.dropdown {
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-      color: black;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="formatting.css">
   <!-- mathjax needed to display equations, just write them like in LaTeX-->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -232,7 +122,7 @@
         </p>
 
         <div class="imagebox" style="width:45%">
-          <img src="lambert.png" alt="Lambert's Law">
+          <img src="img/lambert.png" alt="Lambert's Law">
           <div class="container" style="width:100%">
             <hr>
             <p>Lambert's Law: $ E = \dfrac{\Phi}{A} = \dfrac{\Phi\; cos\; \theta}{A^\bot} $</p>
@@ -275,7 +165,7 @@
         </p>
 
         <div class="imagebox" style="width:65%">
-          <img src="BRDF_input.png" alt="input quantities for BRDF">
+          <img src="img/BRDF_input.png" alt="input quantities for BRDF">
           <div class="container" style="width:100%">
             <hr>
             <p>The input parameters of a BRDF are the angles $\theta_i$,
@@ -288,7 +178,7 @@
         to consider differential cones of directions around $\omega_i$ and $\omega_r$.
 
         <div class="imagebox" style="width:65%">
-          <img src="BRDF_output.png" alt="output of BRDF">
+          <img src="img/BRDF_output.png" alt="output of BRDF">
           <div class="container" style="width:100%">
             <hr>
             <p>Differential cones of directions for $\omega_i$ and $\omega_i$
@@ -340,7 +230,7 @@
           to appear in different colors when viewing from different angles, i.e. iridescence.
         </p>
         <div class="imagebox" style="width:50%">
-          <img src="cd_micro.jpg" alt="details of CD surface">
+          <img src="img/cd_micro.jpg" alt="details of CD surface">
           <div class="container" style="width:100%">
             <hr>
             <p>Micrograph of a CD</p>
@@ -350,7 +240,7 @@
 
 
         <div class="imagebox" style="width:95%">
-          <img src="diffraction.png" alt="diffraction on nanostructure">
+          <img src="img/diffraction.png" alt="diffraction on nanostructure">
           <div class="container" style="width:100%">
             <hr>
             <p> Diffraction at surface details</p>
@@ -358,7 +248,7 @@
         </div>
 
         <div class="imagebox" style="width:50%">
-          <img src="xenopeltis.jpg" alt="AFM of xenopeltis skin">
+          <img src="img/xenopeltis.jpg" alt="AFM of xenopeltis skin">
           <div class="container" style="width:100%">
             <hr>
             <p>The skin of a sunbeam snake (xenopeltis) under atomic force microscopy.</p>
