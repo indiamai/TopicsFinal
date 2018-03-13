@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Physics - Fourier</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/topic.css">
+    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+        });
+      </script>
+      <script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'>
+  </script>
+
+  <body>
+    <header>
+      <div class="header-box" id="header-intro">
+        <a href="../../index.html#intro" class="header-box-link">&nbspINTRO&nbsp</a>
+      </div>
+      <div class="header-box" id="header-topics">
+        <a href="../../topics/topic1.html" class="header-box-link">&nbspTopic 1&nbsp</a>
+        <a href="../../topics/physicstopics/physics.html" class="header-box-link">&nbspPhysics&nbsp</a>
+        <a href="../../topics/topic3.html" class="header-box-link">&nbspTopic 3&nbsp</a>
+        <a href="../../topics/topic4.html" class="header-box-link">&nbspTopic 4&nbsp</a>
+      </div>
+      <div class="header-box" id="header-team">
+        <a href="../../index.html#team" class="header-box-link">&nbspTEAM&nbsp</a>
+      </div>
+    </header>
+
+    <main>
+      <article id="main" class="pages">
+      <div id="main-body">
+        <h1 id="main-body-top" class="text-top text">Fourier </h1>
+
+          <h2 id="main-body-maths" class="text-body text">Fourier Series</h2>
+          <p id="main-body-fourierseries" class="text-body text">
+            The Fourier series acts to represent funtions as the sum of simple sine waves. This is the main
+            concept of the Fourier transform which is discussed slightly further down this web page.
+            <br>
+            A Fourier series is an expansion of a periodic function in terms of an infinite sum of sines and cosines. In the
+            context that we will be looking at this later that means an electromagnetic wave. The study of Fourier series
+            is known as
+            <a href="https://en.wikipedia.org/wiki/Harmonic_analysis">harmonic analysis</a>
+            and is extremely useful as a way to break up and simplify any periodic function into a set of terms that can be
+            substituted in, solved individually, and then recombined to obtain the solution to the original problem.
+            <br>
+            A general <a href="http://mathworld.wolfram.com/FourierSeries.html"><u>Fourier Series</u></a> of a function
+            $f(x)$, is defined (on the interval $[-\pi,\pi]$) as follows:
+            <br>
+            $f(x) = \frac{1}{2}a_0 + \sum_{n=1}^{\infty}a_ncos(nx) + \sum_{n=1}^{\infty}b_nsin(nx)$
+            <br> where:
+            <br>
+            $a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)dx$ <br>
+            $a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}cos(nx)dx$ <br>
+            $b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}sin(nx)dx$ <br>
+            This tranform can be extended to cover functions defined on any interval and for the below definit
+          </p>
+
+          <h2 id="main-body-transform" class="text-body text">Fourier Tranform - The Idea</h2>
+          <p id="main-body-fouriertransform" class="text-body text">
+            The Fourier transform of a function of time is a complex-valued function of frequency,
+             whose absolute value represents the amount of that frequency present in the original function,
+              and whose complex argument is the phase offset of the basic
+              <span title="A  curve similar to the sine function but possibly shifted in phase, period, amplitude, or any combination thereof.">
+                <u>sinusoid</u></span> in that frequency.
+              <br>
+              <br>
+              The above definition may sound complicated, but the Fourier transform really does a very intuitive thing.
+              <br>
+              What the above means, is that the Fourier transform takes a time-based pattern,
+              measures every possible cycle and decomposes it into the frequencies that combine to make it.
+              Essentially, we are turning a signal into a set of circular paths at every point in time in the
+              signal. If we can understand all these circular paths, then we can understand the signal.
+              <br>
+              It’s like filtering a soup to find out what it’s made from. Use a set of filters to
+               find out the different ingredients. This essentially gives you a “recipe” for the soup.
+                Recipes are often easier to understand than the soup. If you want the smoothie back, you
+               can just follow the recipe.
+              <br> The Fourier Transform finds the recipe for a signal, like our soup process: <br>
+              •	Start with a time-based signal <br>
+              •	Apply filters to measure each possible "circular ingredient" <br>
+              •	Collect the full recipe, listing the amount of each "circular ingredient" <br>
+          </p>
+
+          <h2 id="main-body-maths" class="text-body text">Fourier Transform - Maths</h2>
+          <p id="main-body-fouriermaths" class="text-body text">
+            The fourier transform is usually denoted $\hat{f}$. There are a few definitions but the most common is defined
+            below of an integratble function $f : \mathbb{R} \rightarrow \mathbb{C}$
+            The transform is a generalization of the complex Fourier series, seen
+            <a href="http://mathworld.wolfram.com/FourierSeries.html"><u>here</u></a> <i>(and shown generally above)</i>, 
+            in the limit as $L\rightarrow\infty$. Replace the discrete $A_n$ with the continuous $f(x)dx$ while letting
+            $\frac{n}{L}\rightarrow x$. Then the sum is changed to an integral, and the tranform is defined as:
+            <br>
+            $\hat{f}(\xi)= \int_{-\infty}^{\infty} f(x)e^{2\pi ix\xi}dx$,
+            <br>
+            For any $\xi\in\mathbb{R}$. Where the $x$ represents time, the transform variable $\xi$ represents frequency.
+          </p>
+      </div>
+      </article>
+
+    </main>
+
+  </body>
+
+</html>
