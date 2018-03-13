@@ -140,6 +140,55 @@
          <p> How BSDF, BRDF and BTDF are related </p>
        </div>
      </div>
+     <hr>
+     <h2> Wave-based BSDFs</h2>
+     <p>
+       A fairly recent paper described a method of integrating wave-based effects into a ray tracer model by using a specific type of BSDF. They termed this a Wave BSDF. They introduced it to support the effects of diffraction and interference on wavelength-scale structures, as many of the current methods require nearby sections to be considered in conjunction with the current section, which is difficult to achieve computationally. Their new method allows each section to be considered individually, maintaining the accuracy of the produced effect.
+     </p>
+     <p>
+       A Wave BSDF encodes the phase information of a wave within it, using the Wigner Distribution Function(WDF) for wave optics. The WDF is a way of describing optical fields and how they move, and is used to take care of complex calculations about the phase of the wave.
+    </p>
+    <p>
+
+      When rendering rays, we can use the rendering equation, which constructs a formula for the total outgoing light, from the emitted and reflected light:
+    </p>
+    <ul>
+    <h4> OUTGOING LIGHT = EMITTED LIGHT + ∫(BSDF x INCOMING LIGHT)</h4>
+  </ul>
+  <p>
+    As phase is not explicitly taken into account in this equation, we include it in the BSDF to ensure we have the necessary information for calculation of interference. This is one of the differences included in a wave-based BSDF, as information is preserved over time, rather than recalculated.
+  </p>
+      A Wigner distribution function is a function of the spatial (the position of the ray in space), and the spatial frequency. Spatial frequency can be basically expressed as a function of the wavelength and direction of the wave:
+
+    \begin{equation}
+        u = \frac{\lambda}{sin(\theta)}
+    \end{equation}
+
+    	We create the wave-based BSDF by taking the four inputs: $x$, the incoming direction, $\theta_i$, the outgoing direction $\theta_o$ and the wavelength $\lambda$. We transform the last three into a formula for the spatial frequency:
+
+    \begin{equation}
+     u = \frac{\pm sin(\theta_o)-sin(\theta_i)}{\lambda}
+    \end{equation}
+
+    This can then be applied to the WDF, forming our BSDF.
+    <p>
+      The properties of this BSDF include:
+      <ul>
+        <li>
+	It is conserved over distance, and so is valid in both the near and far field. This is due the its independence on distance, as it is based on angles
+</li>
+<li>
+	It can take into account the coherence of multiple sources, whether they are coherent or not. This is due to the treatment of sources jointly to create a single wave BSDF.
+</li>
+</ul>
+A limitation of this method is the fact that it is able to produce a result with a negative radiance, which is physically impossible.
+
+<hr>
+
+
+
+
+
 
 
 
