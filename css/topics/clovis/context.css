@@ -35,23 +35,6 @@
   font-size: 20px;
 }
 
-#main-body{
-  position: relative;
-  margin: 2%;
-}
-
-#main-body-top{
-  text-align: center;
-}
-
-#main{
-  background: url("../img/bg-team.jpg");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #5f7bc0;
-}
-
 td{
   text-align: center;
 }
