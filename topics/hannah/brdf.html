@@ -83,7 +83,8 @@
         </ul>
       </p>
       <p>
-        We will now consider the directional distribution of light after it hits a surface.
+        We will now consider the directional distribution of light reflected
+        from a surface.
         <!-- There are two main aspects to consider: the directional distribution and the spectral distribution. -->
       </p>
       <hr>
@@ -168,10 +169,10 @@
         </div>
 
         <p>
-        We want to relate the reflected radiance $L_r(p, \omega_r)$ to the incident
-        radiance $L_i(p, \omega_i)$. Recall the definiton of radiance above. We need
-        to consider differential cones of directions around $\omega_i$ and $\omega_r$.
-      </p>
+          We want to relate the reflected radiance $L_r(p, \omega_r)$ to the incident
+          radiance $L_i(p, \omega_i)$. Recall the definiton of radiance above. We need
+          to consider differential cones of directions around $\omega_i$ and $\omega_r$.
+        </p>
         <div class="imagebox" style="width:65%">
           <img src="../../img/hannah/BRDF_output.png" alt="output of BRDF">
           <div class="container" style="width:100%">
@@ -212,6 +213,8 @@
                amount of reflected light is less than or equal to the amount of
                incident light.
           </ul>
+          When BRDFs are used in rendering programs, they can be specific to
+          the wavelength of light considered ($f_\lambda(p, \omega_r, \omega_i)$).
         </p>
         <hr>
       </section>
@@ -249,19 +252,50 @@
           </div>
         </div>
         <p>
+          Such microgeometries are often represented as height fields. A CD surface can be represented
+          as a superposition of bumps [<a href="stam">5</a>]. Here is a very simple approach:
+          \[
+            h(x,y) = \sum_{n = -\infty}^{\infty} \sum_{m = -\infty}^{\infty}
+             b(x-x_n, y - y_m)
+          \]
+          Here $x_n = n \; \Delta x$ is evenly spaced where $\Delta x$ is the distance
+          between the $x$ locations and $y_m$ is given by a Poisson distribution specified
+          by the density of the bumps on the CD surface. $b$ is the bump function:
+          \[
+            b(x,y) = h_0 \; g(\frac{x}{a})\; rect(\frac{x}{a}) \;rect(\frac{y}{b})
+          \]
+          Where $h_0$ is the height of the bumps, $a \leq \Delta x$ the width of the bumps
+          and $b$ the length of the bumps, $rect(t)$ is a rectangular function
+          that is 1 when $t \in [-\frac{1}{2}, \frac{1}{2}]$ and 0 otherwise. $g$ describes the
+          type of the bumps. For a CD with approximately rectangular bumps, $g(t) = 1$ is a
+          suffices.
+        </p>
+        <p>
+          Using Fourier transforms, Stam [<a href="stam">5</a>] could analytically develop a
+          BRDF to model diffraction on a CD surface.
+        </p>
+        <div class="imagebox" style="width:50%">
+          <img src="../../img/hannah/stam_cd.jpg" alt="rendered CD">
+          <div class="container" style="width:100%">
+            <hr>
+            <p> Rendered image of a CD [<a href="stam">5</a>]</p>
+          </div>
+        </div>
+        <p>
           Natural surfaces like snake skins can also act as a diffraction grating provided
           that the details in their microgeometry have a size similar to the wavelength of
           visible light.
+
+          <!-- new rendering technique summary, example -->
         </p>
         <div class="imagebox" style="width:90%">
           <img src="../../img/hannah/xenopeltis_nat.JPG" alt="xenopeltis">
           <img src="../../img/hannah/xenopeltis.jpg" alt="AFM of xenopeltis skin">
           <div class="container" style="width:100%">
             <hr>
-            <p>The skin of a sunbeam snake [<a href="xeno_nat">5</a>] (xenopeltis) under atomic force microscopy [<a href="xeno">6</a>].</p>
+            <p>The skin of a sunbeam snake [<a href="xeno_nat">6</a>] (xenopeltis) under atomic force microscopy [<a href="xeno">7</a>].</p>
           </div>
           <!-- Am I allowed to use this image? -->
-          <!-- Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188. -->
         </div>
 
         <!-- Sciammarella, Cesar A., & Sciammarella, Federico M. (2012). Optical Methods – Interference and Diffraction of Light. In Experimental Mechanics of Solids (pp. 155-181). Chichester, UK: John Wiley & Sons. -->
@@ -301,6 +335,9 @@
     </li>
     <li id= "xeno_nat" class="spaced">
       https://commons.wikimedia.org/wiki/File:Young_sunbeam_snake_from_Thailand.JPG
+    </li>
+    <li id="stamm" class="spaced">
+      Stam, J. (1999). Diffraction shaders. Proceedings of the 26th Annual Conference on Computer Graphics and Interactive Techniques, 101-110.
     </li>
     <li id="xeno" class="spaced">
       Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188.
