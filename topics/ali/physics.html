@@ -81,7 +81,7 @@
         $a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)dx$ <br>
         $a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}cos(nx)dx$ <br>
         $b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}sin(nx)dx$ <br></div>
-        This tranform can be extended to cover functions defined on any interval.
+        This series can be extended to cover functions defined on any interval.
       </p>
       <hr>
 
@@ -102,14 +102,14 @@
           signal. If we can understand all these circular paths, then we can understand the signal.
           <br>
           It’s like filtering a soup to find out what it’s made from. Use a set of filters to
-           find out the different ingredients. What this does is essentially give you a “recipe” for the soup.
+           find out the different ingredients that make up the soup. What this does is essentially give you a “recipe” for the soup.
             Recipes are often easier to understand than the soup. Having the recipe also means that you know how to
             make the soup, and since you have all the filtered parts, you can make the soup again! The
             Fourier Transform finds the recipe for a signal, like our soup process:
           <ul>
             <li class="spaced">Start with a time-based signal </li>
             <li class="spaced">Apply filters to measure each possible "circular ingredient" </li>
-            <li class="spaced">Collect the full recipe, listing the amount of each "circular ingredient"</li>
+            <li class="spaced">Finally collect the full recipe, knowing the amount of each "circular ingredient"</li>
           </ul>
       </p>
       <hr>
@@ -160,7 +160,7 @@
         below of an integratble function $f : \mathbb{R} \rightarrow \mathbb{C}$ <b>(2)</b>.
         The transform is a generalization of the complex Fourier series, seen
         <a href="http://mathworld.wolfram.com/FourierSeries.html"><u>here</u></a> <i>(and shown generally above)</i>,
-        in the limit as $L\rightarrow\infty$. Replace the discrete $A_n$ with the continuous $f(x)dx$ while letting
+        in the limit as $L\rightarrow\infty$. Replace the discrete $a_n$ with the continuous $f(x)dx$ while letting
         $\frac{n}{L}\rightarrow x$. Then the sum is changed to an integral, and the tranform is defined as:
         <br><div class="center">
         $\hat{f}(\xi)= \int_{-\infty}^{\infty} f(x)e^{2\pi ix\xi}dx$,</div>
