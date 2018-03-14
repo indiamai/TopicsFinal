@@ -1,32 +1,81 @@
-<html>
-  <head>
-    <title>Physics - Optics</title>
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../css/topic.css">
-    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  </head>
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Optics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link rel="stylesheet" type="text/css" href="table.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
 
-  <body>
-    <header>
-      <div class="header-box" id="header-intro">
-        <a href="../../index.html#intro" class="header-box-link">&nbspINTRO&nbsp</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <div class="header-box" id="header-topics">
-        <a href="../../topics/topic1.html" class="header-box-link">&nbspTopic 1&nbsp</a>
-        <a href="physics.html" class="header-box-link">&nbspPhysics&nbsp</a>
-        <a href="../../topics/topic3.html" class="header-box-link">&nbspTopic 3&nbsp</a>
-        <a href="../../topics/topic4.html" class="header-box-link">&nbspTopic 4&nbsp</a>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="../../index.html">Home</a></li>
+          <li>
+          <li class="dropdown">
+            <a class="dropbtn">Menu</a>
+            <div class="dropdown-content">
+              <!-- add links to other topics -->
+              <a href="../clovis/context.html">Context</a>
+              <a href="../hannah/brdf.html">BRDF</a>
+              <a href="../india/IndiaSection.html">Rays and Waves</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../cv/ali/ali.html">About</a></li>
+        </ul>
       </div>
-      <div class="header-box" id="header-team">
-        <a href="../../index.html#team" class="header-box-link">&nbspTEAM&nbsp</a>
-      </div>
-    </header>
+    </div>
+  </nav>
 
-    <main>
-      <article id="main" class="pages">
-      <div id="main-body">
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
+
         <h1 id="main-body-top" class="text-top text">Optics</h1>
+
+        <h2 id="main-body-diffraction" class="text-body text">Diffraction</h2>
+        <p id="main-body-diffraction">
+          When waves pass around an object or through an
+          <span title=" An opening, such as a hole, gap, or slit. A usually adjustable opening in an optical instrument, such as a microscope, a camera, or a telescope, that limits the amount of light passing through a lens or onto a mirror. The diameter of such an opening.">
+          <u>aperature</u></span>
+          a phenomena called Diffraction occurs. Diffraction is the act of the waves spreading through the aperture,
+          or around the object. Significant diffraction occur when the size of the aperture or obstacle is of similar
+          size to the wavelength of the incident wave.
+          <div class="imagebox" style="width:40%">
+          <img src="img/diffractiongap.jpg" alt="figure 3.1" title="figure 3.1">
+              <div class="container" style="width:100%">
+                <hr>
+                <p>Diagram illustrating diffraction through a large and small gap.</p>
+              </div>
+            </div>
+
+        </p>
+
         <h2 id="main-body-fouriermaxwell" class="text-body text">Fourier and Maxwell</h2>
         <p id="main-body-fourierandmaxwell" class="text-body text">
           The way Fourier optics work is quite different than ordinary ray optics. A lot of us will have
@@ -60,16 +109,28 @@
           to produce consistent and accurate results. In a lens with constant refractive index, or
           a medium like free space,
           <a href="">(<u>a homogeous isotropic material</u>)</a>, and in general, the field can be
-          described by a scalar function representing either the electric or the magnetic 
+          described by a scalar function representing either the electric or the magnetic
           field amplitude.
-
         </p>
+    </div>
 
-      </div>
-      </article>
 
-    </main>
+    <div class="col-sm-2 sidenav">
+      <a href="fourier.html"><h3><u>Fourier</u></h3></a>
+      <br>
+      <a href="maxwell.html"><h3><u>Maxwell</u></h3></a>
+    </div>
+  </div>
+</div>
 
-  </body>
+<footer class="container-fluid text-center">
+  <h3>References</h3>
+  <p>
+  Alternativephysics.org. (2016). Diffraction of Light. [online] Available at:
+  <a href="http://alternativephysics.org/book/Diffraction.htm">
+  "http://alternativephysics.org/book/Diffraction.htm"</a> [Accessed 7 Mar. 2018].
+  </p>
+</footer>
 
+</body>
 </html>

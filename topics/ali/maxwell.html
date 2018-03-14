@@ -1,186 +1,242 @@
-<html>
-  <head>
-    <title>Physics - Maxwell</title>
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../css/topic.css">
-    <link rel="stylesheet" type="text/css" href="table.css">
-    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  </head>
-
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Maxwell</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link rel="stylesheet" type="text/css" href="table.css">
+  <!-- mathjax needed to display equations, just write them like in LaTeX-->
   <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-        });
-      </script>
-      <script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'>
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
   </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
 
-  <body>
-    <header>
-      <div class="header-box" id="header-intro">
-        <a href="../../index.html#intro" class="header-box-link">&nbspINTRO&nbsp</a>
-      </div>
-      <div class="header-box" id="header-topics">
-        <a href="../../topics/topic1.html" class="header-box-link">&nbspTopic 1&nbsp</a>
-        <a href="../../topics/physicstopics/physics.html" class="header-box-link">&nbspPhysics&nbsp</a>
-        <a href="../../topics/topic3.html" class="header-box-link">&nbspTopic 3&nbsp</a>
-        <a href="../../topics/topic4.html" class="header-box-link">&nbspTopic 4&nbsp</a>
-      </div>
-      <div class="header-box" id="header-team">
-        <a href="../../index.html#team" class="header-box-link">&nbspTEAM&nbsp</a>
-      </div>
-    </header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="../../index.html">Home</a></li>
+        <li>
+        <li class="dropdown">
+          <a class="dropbtn">Menu</a>
+          <div class="dropdown-content">
+            <!-- add links to other topics -->
+            <a href="../clovis/context.html">Context</a>
+            <a href="../hannah/brdf.html">BRDF</a>
+            <a href="../india/IndiaSection.html">Rays and Waves</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../../cv/ali/ali.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <main>
-      <article id="main" class="pages">
-      <div id="main-body">
-        <h1 id="main-body-top" class="text-top text">Maxwell's Equations</h1>
+<div class="container-fluid text-center">
+  <div class="row content" >
 
-        <h2 id="main-body-electromagnetism" class="text-body text">Electromagnetism and Maxwell</h2>
-          <p id="main-body-electomagnetismmaxwell" class="text-body text">
-            Electricity and magnetism were combined by Maxwell. The theory of electromagnetism states that all
-            types of electromagnetic waves travel as seen below <i>(figure 2.1)</i>, with the electric field, magnetic
-            field, and direction of travel at right angles to one another
-            <br>
-            <img src="img/electromagneticwave.png" alt="figure 2.1" title="figure 2.1">
-            <br>
-            There are 4 equations that Maxwell made come together to form Maxwell’s Equations: <b>Gauss'
-            Law for Electric Fields</b> describes the behaviour of an electric field,  <b>Gauss' Law for Magnetism</b>
-            describes the magnetic field and how a magnetic monopole cannot exist,  <b>Faraday's Law</b> tells us
-            to what extent a changing a magnetic field creates an electric field - this joins electricity
-            and magnetism together, and <b>Ampere's Law</b> shows to what extent current can be induced by a moving
-            magnet or that a magnetic field can be induced by a current. These equations, for vacuums are
-            shown mathematically below in <i>figure 2.2</i>. (Nave, 1999)
-            <br>
-            </p>
-            <div id="main-body-table" align="center">
-              <table title="figure 2.2">
-                <tr>
-                  <td>[1]</td>
-                  <td>$ \nabla \cdot D = p_v $</td>
-                  <td>Gauss’ Law for Electric Fields – This dictates how the electric field behaves around electric charges.</td>
-                </tr>
-                <tr>
-                  <td>[2]</td>
-                  <td>$ \nabla \cdot B = 0 $.</td>
-                  <td>Gauss’ Law for Magnetism – This states a magnetic field, B, has a divergence of zero. </td>
-                </tr>
-                <tr>
-                  <td>[3]</td>
-                  <td>$ \nabla \times E = -\frac{\partial B}{\partial t} $</td>
-                  <td>Faraday’s Law of Induction – This predicts how a magnetic field will interact with an
-                    electric circuit to produce and EMF.</td>
-                </tr>
-                <tr>
-                  <td>[4]</td>
-                  <td>$ \nabla \times H = \frac{\partial B}{\partial t} + J $.</td>
-                  <td>Ampere’s Law – This relates the integrated magnetic field around a closed loop
-                    to the electric current passing through the loop. Shows how a magnetic or electric field can be induced.</td>
-                </tr>
-              </table>
+        <div class="col-sm-2 sidenav">
+        </div>
+
+    <div class="col-sm-8 text-left">
+      <h1 id="main-body-top" class="text-top text">Maxwell's Equations</h1>
+
+      <h2 id="main-body-electromagnetism" class="text-body text">Electromagnetism and Maxwell</h2>
+        <p id="main-body-electomagnetismmaxwell" class="text-body text">
+          Electricity and magnetism were combined by Maxwell. The theory of electromagnetism states that all
+          types of electromagnetic waves travel as seen below <i>(figure 2.1)</i>, with the electric field, magnetic
+          field, and direction of travel at right angles to one another
+          <br>
+          <div class="imagebox" style="width:95%">
+          <img src="img/electromagneticwave.png" alt="figure 2.1" title="figure 2.1">
+              <div class="container" style="width:100%">
+                <hr>
+                <p> Electromagnetic Wave</p>
+              </div>
             </div>
-          <p id="main-body-electomagnetismmaxwell" class="text-body text">
-            Induction, as mentioned above, is the production of an electromotive force (e.m.f.) across a conductor
-            due to its interaction with a magnetic field. This could be something as simple as moving a permanent
-            magnet through a coil of wire, which would produce a current. Lenz’s Law states that the e.m.f. that
-            is induced will oppose the current causing it. Mathematically this relationship is directly proportional.
-            <br>
-            $ \epsilon \propto -\frac{dI}{dt} $, where $\epsilon$ is the induced e.m.f. in a coil or inductor, and the negative
-            shows $\epsilon$ is in the opposite direction to $\frac{dI}{dt}$
-            <br>
-            <img src="img/emf.png" alt="figure 2.3" title="figure 2.3">
+          <br>
+          There are 4 equations that Maxwell made come together to form Maxwell’s Equations: <b>Gauss'
+          Law for Electric Fields</b> describes the behaviour of an electric field,  <b>Gauss' Law for Magnetism</b>
+          describes the magnetic field and how a magnetic monopole cannot exist,  <b>Faraday's Law</b> tells us
+          to what extent a changing a magnetic field creates an electric field - this joins electricity
+          and magnetism together, and <b>Ampere's Law</b> shows to what extent current can be induced by a moving
+          magnet or that a magnetic field can be induced by a current. These equations, for vacuums are
+          shown mathematically below in <i>figure 2.2</i>. (Nave, 1999)
+          <br>
           </p>
-
-        <h2 id="main-body-maths" class="text-body text">Divergence</h2>
-        <p id="main-body-divergence" class="text-body text">
-          One of the most important concepts in Maxwell’s equations is divergence (equations [1] and [2]). Divergence,
-          at a point $(x,y,z)$ is the measure of the vector flow out of a surface surrounding that point. If something
-          is flowing out of a point then the divergence is taken as positive, if divergence is negative then something
-          is flowing into a point.
+          <div id="main-body-table" align="center">
+            <table title="figure 2.2">
+              <tr>
+                <td>[1]</td>
+                <td>$ \nabla \cdot D = p_v $</td>
+                <td>Gauss’ Law for Electric Fields – This dictates how the electric field behaves around electric charges.</td>
+              </tr>
+              <tr>
+                <td>[2]</td>
+                <td>$ \nabla \cdot B = 0 $.</td>
+                <td>Gauss’ Law for Magnetism – This states a magnetic field, B, has a divergence of zero. </td>
+              </tr>
+              <tr>
+                <td>[3]</td>
+                <td>$ \nabla \times E = -\frac{\partial B}{\partial t} $</td>
+                <td>Faraday’s Law of Induction – This predicts how a magnetic field will interact with an
+                  electric circuit to produce and EMF.</td>
+              </tr>
+              <tr>
+                <td>[4]</td>
+                <td>$ \nabla \times H = \frac{\partial B}{\partial t} + J $.</td>
+                <td>Ampere’s Law – This relates the integrated magnetic field around a closed loop
+                  to the electric current passing through the loop. Shows how a magnetic or electric field can be induced.</td>
+              </tr>
+            </table>
+          </div>
+        <p id="main-body-electomagnetismmaxwell" class="text-body text">
+          Induction, as mentioned above, is the production of an electromotive force (e.m.f.) across a conductor
+          due to its interaction with a magnetic field. This could be something as simple as moving a permanent
+          magnet through a coil of wire, which would produce a current. Lenz’s Law states that the e.m.f. that
+          is induced will oppose the current causing it. Mathematically this relationship is directly proportional.
           <br>
-          The image below shows positive divergence from a point.
-          <br>
-          <img src="img/positivediv.png" title="figure 2.4" width="300px" height="300px">
-          <br>
-          Take a vector function $A$ as defined below:
-          <br>
-          $A = \begin{bmatrix}A_x \\ A_y \\ A_z\end{bmatrix} = A_x\underline{i} + A_y\underline{j} +
-          A_z\underline{k} = A_x\begin{bmatrix}1 \\0 \\0 \end{bmatrix} + A_y\begin{bmatrix}0 \\1 \\0 \end{bmatrix} +
-          A_z\begin{bmatrix}0 \\ 0 \\1 \end{bmatrix}$
-          <br>
-          Since divergence is a measure of how fast the vector field is changing in the x, y, and z directions,
-          then the divergence of A is how fast the vector function is changing, so:
-          <br>
-          $\nabla \cdot A = \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} +
-          \frac{\partial A_z}{\partial z}$
-          <br>
-          Where$ \frac{\partial}{\partial x}$ is the symbol for a <a href="https://www.khanacademy.org/math/multivariable-
-          calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/introduction-to-partial-derivatives">
-          partial derivative</a> with respect to $x$, and $\nabla \cdot$ is the divergence.
-          <br>
-          There is a good visualisation of this
-          <a href="https://mathinsight.org/divergence_idea"><u>here</u></a>
+          <div class="imagebox" style="width:35%">
+          <img src="img/emf.png" alt="figure 2.3" title="figure 2.3">
+              <div class="container" style="width:100%">
+                <hr>
+                <p> $ \epsilon \propto -\frac{dI}{dt} $, where $\epsilon$ is the induced e.m.f. in a coil or inductor, and the negative
+                shows $\epsilon$ is in the opposite direction to $\frac{dI}{dt}$</p>
+              </div>
+            </div>
         </p>
+        <hr>
 
-        <h2 id="main-body-maths" class="text-body text">Curl</h2>
-        <p id="main-body-curl" class="text-body text">
-          Another vector function that is used in equations [3] and [4] is curl (symbol $\nabla \times$). The curl is the
-          measure of three-dimensional rotation of a vector field. At every point in the vector field, the curl of that
-          point is represented as a vector.
-          <br>
-          <img src="img/curl.png" title="figure 2.5" width="300px" height="300px">
-          <br>
-          Take $A$ as defined above. Then the curl of $A$ is defined as:
-          <br>
-          $\nabla \times A = (\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z})\underline{i} +
-          (\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x})\underline{j} +
-          (\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y})\underline{k}$
-          <br>
-          $ = \begin{bmatrix}(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z})
-          \\(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x})
-          \\(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y})\end{bmatrix}$
-          <br>
-          $\frac{\partial A_z}{\partial y}$ is the rate of change of $A$ in the $z$ direction with respect to $y$
-          <br>
-          There is a good visualisation of this idea
-          <a href="https://mathinsight.org/curl_idea"><u>here</u></a>
-        </p>
-
+      <h2 id="main-body-maths" class="text-body text">Divergence</h2>
+      <p id="main-body-divergence" class="text-body text">
+        One of the most important concepts in Maxwell’s equations is divergence (equations [1] and [2]). Divergence,
+        at a point $(x,y,z)$ is the measure of the vector flow out of a surface surrounding that point. If something
+        is flowing out of a point then the divergence is taken as positive, if divergence is negative then something
+        is flowing into a point.
         <br>
-        <h2 id="main-body-references" class="text-body text">References</h2>
-        <p id="main-body-references" class="text-body text">
-          Math.harvard.edu. (2009). Curl and Divergence. [online] Available at:
-          <a href="http://www.math.harvard.edu/archive/21a_spring_09/PDF/13-05-curl-and-divergence.pdf">
-          http://www.math.harvard.edu/archive/21a_spring_09/PDF/13-05-curl-and-divergence.pdf</a>
-          [Accessed 3 Mar. 2018].
-          <br>
-          Nave, R. (1999). Maxwell's Equations. [online] Hyperphysics.phy-astr.gsu.edu. Available at:
-          <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/maxeq.html">
-          http://hyperphysics.phy-astr.gsu.edu/hbase/electric/maxeq.html</a> [Accessed 6 Mar. 2018].
-          <br>
-          figure 2.1 - Quora. (2017). Electromagnetic Waves. [online] Available at:
-          <a href="https://qph.ec.quoracdn.net/main-qimg-1555beff02d8ebef0dd25bed865db8bf">
-          https://qph.ec.quoracdn.net/main-qimg-1555beff02d8ebef0dd25bed865db8bf</a>
-          [Accessed 3 Mar. 2018].
-          <br>
-          figure 2.4 - Mathinsight.org. (n.d.). The idea of the divergence of a vector field - Math Insight.
-          [online] Available at:
-          <a href="https://mathinsight.org/divergence_idea">
-          https://mathinsight.org/divergence_idea</a> [Accessed 5 Mar. 2018].
-          <br>
-          figure 2.5 - Mathinsight.org. (n.d.). The idea of the curl of a vector field - Math Insight.
-          [online] Available at:
-          <a href="https://mathinsight.org/curl_idea">
-          https://mathinsight.org/curl_idea</a> [Accessed 5 Mar. 2018].
-        </p>
+        The image below shows positive divergence from a point.
+        <br>
+        <div class="imagebox" style="width:40%">
+          <img src="img/positivediv.png" alt="figure 2.4" title="figure 2.4" width="300px" height="300px">
+            <div class="container" style="width:100%">
+              <hr>
+              <p>Diagram representing positive divergence from the ball.</p>
+            </div>
+          </div>
+        <br>
+        Take a vector function $A$ as defined below:
+        <br>
+        <div class="center">
+        $A = \begin{bmatrix}A_x \\ A_y \\ A_z\end{bmatrix} = A_x\underline{i} + A_y\underline{j} +
+        A_z\underline{k} = A_x\begin{bmatrix}1 \\0 \\0 \end{bmatrix} + A_y\begin{bmatrix}0 \\1 \\0 \end{bmatrix} +
+        A_z\begin{bmatrix}0 \\ 0 \\1 \end{bmatrix}$
+        </div>
+        <br>
+        Since divergence is a measure of how fast the vector field is changing in the x, y, and z directions,
+        then the divergence of A is how fast the vector function is changing, so:
+        <br>
+        <div class="center">
+        $\nabla \cdot A = \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} +
+        \frac{\partial A_z}{\partial z}$
+        <br>
+        </div>
+        Where$ \frac{\partial}{\partial x}$ is the symbol for a <a href="https://www.khanacademy.org/math/multivariable-
+        calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/introduction-to-partial-derivatives">
+        partial derivative</a> with respect to $x$, and $\nabla \cdot$ is the divergence.
+        <br>
+        There is a good visualisation of this
+        <a href="https://mathinsight.org/divergence_idea"><u>here</u></a>.
+      </p>
 
-      </div>
-      </article>
+      <hr>
+      <h2 id="main-body-maths" class="text-body text">Curl</h2>
+      <p id="main-body-curl" class="text-body text">
+        Another vector function that is used in equations [3] and [4] is curl (symbol $\nabla \times$). The curl is the
+        measure of three-dimensional rotation of a vector field. At every point in the vector field, the curl of that
+        point is represented as a vector.
+        <br>
+        <div class="imagebox" style="width:40%">
+        <img src="img/curl.png" alt="figure 2.5" title="figure 2.5" width="300px" height="300px">
+            <div class="container" style="width:100%">
+              <hr>
+              <p>Diagram illustrating curl around a point.</p>
+            </div>
+          </div>
+        <br>
+        Take $A$ as defined above. Then the curl of $A$ is defined as:
+        <br>
+        <div class="center">
+        $\nabla \times A = (\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z})\underline{i} +
+        (\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x})\underline{j} +
+        (\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y})\underline{k}$
+        <br>
+        $ = \begin{bmatrix}(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z})
+        \\(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x})
+        \\(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y})\end{bmatrix}$
+        <br>
+        </div>
+        $\frac{\partial A_z}{\partial y}$ is the rate of change of $A$ in the $z$ direction with respect to $y$
+        <br>
+        There is a good visualisation of this idea
+        <a href="https://mathinsight.org/curl_idea"><u>here</u></a>.
+      </p>
 
-    </main>
+    </div>
 
-  </body>
 
+    <div class="col-sm-2 sidenav">
+      <a href="fourier.html"><h3><u>Fourier</u></h3></a>
+      <br>
+      <a href="optics.html"><h3><u>Optics</u></h3></a>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <h3>References</h3>
+  <p id="main-body-references" class="text-body text">
+    Math.harvard.edu. (2009). Curl and Divergence. [online] Available at:
+    <a href="http://www.math.harvard.edu/archive/21a_spring_09/PDF/13-05-curl-and-divergence.pdf">
+    http://www.math.harvard.edu/archive/21a_spring_09/PDF/13-05-curl-and-divergence.pdf</a>
+    [Accessed 3 Mar. 2018].
+    <br>
+    Nave, R. (1999). Maxwell's Equations. [online] Hyperphysics.phy-astr.gsu.edu. Available at:
+    <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/maxeq.html">
+    http://hyperphysics.phy-astr.gsu.edu/hbase/electric/maxeq.html</a> [Accessed 6 Mar. 2018].
+    <br>
+    figure 2.1 - Quora. (2017). Electromagnetic Waves. [online] Available at:
+    <a href="https://qph.ec.quoracdn.net/main-qimg-1555beff02d8ebef0dd25bed865db8bf">
+    https://qph.ec.quoracdn.net/main-qimg-1555beff02d8ebef0dd25bed865db8bf</a>
+    [Accessed 3 Mar. 2018].
+    <br>
+    figure 2.4 - Mathinsight.org. (n.d.). The idea of the divergence of a vector field - Math Insight.
+    [online] Available at:
+    <a href="https://mathinsight.org/divergence_idea">
+    https://mathinsight.org/divergence_idea</a> [Accessed 5 Mar. 2018].
+    <br>
+    figure 2.5 - Mathinsight.org. (n.d.). The idea of the curl of a vector field - Math Insight.
+    [online] Available at:
+    <a href="https://mathinsight.org/curl_idea">
+    https://mathinsight.org/curl_idea</a> [Accessed 5 Mar. 2018].
+  </p>
+</footer>
+
+</body>
 </html>
