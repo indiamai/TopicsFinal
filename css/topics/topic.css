@@ -40,6 +40,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     width: 80%;
   }
 
@@ -61,6 +63,9 @@
     text-align: left;
   }
 
+  div {
+    font-size: 16px;
+  }
   /* On small screens, set height to 'auto' for sidenav and grid */
   @media screen and (max-width: 767px) {
     .sidenav {
@@ -68,6 +73,9 @@
       padding: 15px;
     }
     .row.content {height:auto;}
+    footer {
+      padding: 15px;
+    }
   }
 
   li.spaced {
