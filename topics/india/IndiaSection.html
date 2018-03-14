@@ -187,6 +187,17 @@ As photons of light are observed to exhibit properties both based on waves and r
 A limitation of this method is the fact that it is able to produce a result with a negative radiance, which is physically impossible.
 
 <hr>
+<h2> Comparison to Stam’s method:</h2>
+  <p>
+In 1999, Jos Stam published a method of creating a BSDF using Fourier transforms that took into account the wave-based nature of light. This allowed far-field rendering of diffraction effects. This method (called Diffraction shaders) happens to have some correlation with the Wave-BSDF discussed above.
+</p>
+<p>
+The wave BSDF we have discussed can be modified to work for different locations of the light source and the observer. Stam’s approach is very similar, however the source and observer at fixed at infinite distance.
+</p>
+<p>
+This new method adds flexibility to Stam’s previous approach, as well as supporting many of its previous characteristics. For example, the wave-BSDF can implicitly account for changes in amplitude by including an extra function in the construction of the wave-BSDF, whereas Stam’s method had to use height-maps, which modelled the changes in phase without explicitly accounting for the amplitude of the structure.
+</p>
+<hr>
 
     </div>
 
@@ -215,7 +226,7 @@ S.  Siltanen, T.  Lokki and L.  Savioja, "Rays or Waves? Understanding the Stren
 T.  Cuypers, T.  Haber, P.  Bekaert, S.  Oh and R.  Raskar, "Reflectance model for diffraction", ACM Transactions on Graphics, vol. 31, no. 5, pp. 1-11, 2012.
 </p>
 <p>
-  [6]J.  Stam, "Diffraction shaders", Proceedings of the 26th annual conference on Computer graphics and interactive techniques  - SIGGRAPH '99, 1999.
+  J.  Stam, "Diffraction shaders", Proceedings of the 26th annual conference on Computer graphics and interactive techniques  - SIGGRAPH '99, 1999.
 </p>
 
 
