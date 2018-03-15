@@ -233,3 +233,25 @@ td{
   z-index: 0;
   opacity: 0.3;
 }
+
+#footer{
+  background-color: #EEEEEE;
+  padding: 0.6%;
+  bottom: 0;
+}
+
+#footer-left{
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+
+#footer-copyright-esa{
+  color:inherit;
+}
+
+#footer-right{
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
