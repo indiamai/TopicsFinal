@@ -58,7 +58,7 @@
       <h1> A way of simulating wave effects in Ray-tracers </h1>
       <hr>
      <h2>BRDFs and BSDFs </h2>
-     <p>As discussed earlier(in the BRDF section), we can use BRDFs(Bidirectional reflectance distribution functions) to represent how the light wave is reflected in a ray tracing model. A more general version of this is a BSDF( bidirectional scattering distribution function), which is a combination of a BRDF and a BTDF(bidirectional transmittance distribution function). A BTDF is a function that represents the transmitted portion of the light wave. These functions describe the probability of a wave being transmitted or reflected in a certain way, and the BSDF combines this probability.</p>
+     <p>As discussed earlier (in the BRDF section), we can use BRDFs (Bidirectional reflectance distribution functions) to represent how the light wave is reflected in a ray tracing model. A more general version of this is a BSDF (bidirectional scattering distribution function), which is a combination of a BRDF and a BTDF (bidirectional transmittance distribution function). A BTDF is a function that represents the transmitted portion of the light wave. These functions describe the probability of a wave being transmitted or reflected in a certain way, and the BSDF combines this probability.</p>
      <div class="imagebox" style="width:70%">
        <img src="https://www.doc.ic.ac.uk/~imm1117/img/india/BSDF.jpg" alt="BSDF">
        <div class="container" style="width:100%">
@@ -73,14 +73,15 @@
        A fairly recent paper described a method of integrating wave-based effects into a ray tracer model by using a specific type of BSDF. They termed this a Wave BSDF. They introduced it to support the effects of diffraction and interference on wavelength-scale structures, as many of the current methods require nearby sections to be considered in conjunction with the current section, which is difficult to achieve computationally. Their new method allows each section to be considered individually, maintaining the accuracy of the produced effect.
      </p>
      <p>
-       A Wave BSDF encodes the phase information of a wave within it, using the Wigner Distribution Function(WDF) for wave optics. The WDF is a way of describing optical fields and how they move, and is used to take care of complex calculations about the phase of the wave.
+       A Wave BSDF encodes the phase information of a wave within it, using the Wigner Distribution Function (WDF) for wave optics. The WDF is a way of describing optical fields and how they move, and is used to take care of complex calculations about the phase of the wave.
     </p>
     <p>
 
       When rendering rays, we can use the rendering equation, which constructs a formula for the total outgoing light, from the emitted and reflected light:
     </p>
     <ul>
-    <h4> OUTGOING LIGHT = EMITTED LIGHT + ∫(BSDF x INCOMING LIGHT)</h4>
+      <div style = "text-align:center">
+    <h4> $Outgoing\;Light = Emitted\;Light + \int(BSDF \times Incoming\;Light)$</h4></div>
   </ul>
   <p>
     As phase is not explicitly taken into account in this equation, we include it in the BSDF to ensure we have the necessary information for calculation of interference. This is one of the differences included in a wave-based BSDF, as information is preserved over time, rather than recalculated.
@@ -91,7 +92,7 @@
         u = \frac{\lambda}{sin(\theta)}
     \end{equation}
 
-    	We create the wave-based BSDF by taking the four inputs: $x$, the incoming direction, $\theta_i$, the outgoing direction $\theta_o$ and the wavelength $\lambda$. We transform the last three into a formula for the spatial frequency:
+    	We create the wave-based BSDF by taking the four inputs: $x$, the incoming direction, $\theta_i$, the outgoing direction $\theta_o$ and the wavelength $\lambda.$ We transform the last three into a formula for the spatial frequency:
 
     \begin{equation}
      u = \frac{\pm sin(\theta_o)-sin(\theta_i)}{\lambda}
@@ -102,7 +103,7 @@
       The properties of this BSDF include:
       <ul>
         <li>
-	It is conserved over distance, and so is valid in both the near and far field. This is due the its independence on distance, as it is based on angles
+	It is conserved over distance, and so is valid in both the near and far field. This is due to its independence on distance, as it is based on angles
 </li>
 <li>
 	It can take into account the coherence of multiple sources, whether they are coherent or not. This is due to the treatment of sources jointly to create a single wave BSDF.
@@ -113,7 +114,7 @@ A limitation of this method is the fact that it is able to produce a result with
 <hr>
 <h2> Comparison to Stam’s method:</h2>
   <p>
-In 1999, Jos Stam published a method of creating a BSDF using Fourier transforms that took into account the wave-based nature of light. This allowed far-field rendering of diffraction effects. This method (called Diffraction shaders) happens to have some correlation with the Wave-BSDF discussed above.
+In 1999, Jos Stam published a method of creating a BSDF using <a href="www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html#fouriertransform">Fourier transforms</a> that took into account the wave-based nature of light. This allowed far-field rendering of diffraction effects. This method (called Diffraction shaders) happens to have some correlation with the Wave-BSDF discussed above.
 </p>
 <p>
 The wave BSDF we have discussed can be modified to work for different locations of the light source and the observer. Stam’s approach is very similar, however the source and observer at fixed at infinite distance.

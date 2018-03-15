@@ -55,9 +55,9 @@
     </div>
 
     <div class="col-sm-8 text-left">
-      <h1> Ray based methods vs Wave based methods</h1>
+      <h1> Ray Based Methods vs Wave Based Methods</h1>
 
-As photons of light are observed to exhibit properties both based on waves and rays, we can approach the rendering of light in several ways. Each way has individual advantages and disadvantages.
+As photons of light are observed to exhibit properties both based on waves and rays, we can approach the rendering of light in several ways. Each method has individual advantages and disadvantages.
       <hr>
       <h2> Rays</h2>
       <p>When shapes are simple, the patterns created by rays (and therefore the light patterns) can be simply predicted using the location of the ray’s sources, and considering the reflected intensity and angle. This can be done using ray tracers. However, this is only truly accurate for completely flat, infinite surfaces, so therefore works well for shapes such as enclosed rectangles, but when gaps or texture are introduced this becomes more tricky.
@@ -97,7 +97,7 @@ As photons of light are observed to exhibit properties both based on waves and r
       \frac{\partial x'}{\partial t} = \pm v
       \end{equation}
 
-      We then take the second derivative of f, substituting in $(1)$ above:
+      We then take the second derivative of $f$, substituting in $(1)$ above:
       \begin{equation}
           \frac{\partial}{\partial u}(\frac{\partial x'}{\partial u})
           =  \frac{\partial}{\partial x}(\frac{\partial x'}{\partial x})
@@ -108,7 +108,7 @@ As photons of light are observed to exhibit properties both based on waves and r
           =  \pm \frac{1}{v}\frac{\partial}{\partial t}(\pm \frac{1}{v}\frac{\partial x'}{\partial t})
       \end{equation}
 
-      This gives us the wave equation for 1D models. This can be extended for models with more dimensions, and solves for any of the variables involved.
+      This gives us the wave equation for 1D models. This can be extended for models with more dimensions, and solved for any of the variables involved.
       \begin{equation}
       \frac{\partial^2 x' }{\partial x^2} =
       \frac{1}{v^2} \frac{\partial^2 x'}{\partial t^2}
