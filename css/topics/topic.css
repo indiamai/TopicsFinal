@@ -149,3 +149,27 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.next{
+  position: absolute;
+  display: block;
+  left: 45.5%;
+  width: 9%;
+  height: 100%;
+  text-align: center;
+  background: url("../../img/downarrow.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  outline: 0;
+}
+
+.next:hover{
+  background: url("../../img/downarrowhover.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-duration: 0.3s;
+  background-color: rgba(67,70,138,0.5);
+}
