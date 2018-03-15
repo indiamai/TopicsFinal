@@ -62,12 +62,12 @@
       <h1>Bidirectional Reflectance Distribution Function</h1>
       <p>
         When light hits a surface, some of it is reflected back into the environment.
-        Inorder to simplfy modelling this process we make the following assumptions [<a href="#Pharr54">Pharr et al.</a>]:
+        In order to simplfy modelling this process we make the following assumptions [<a href="#Pharr54">Pharr et al.</a>]:
         </p>
         <ul>
           <li class = "spaced">
             <b>Linearity</b>: Two inputs combined have the same effect on the optical system
-            as there indivdual consequences combined.
+            as their indivdual consequences combined.
           </li>
           <li class = "spaced">
             <b>Energy conservation</b>: The amount of scattered light is less than or equal
@@ -79,7 +79,7 @@
           <li class = "spaced">
             <b>No flourescence or phosphorescence</b>:
             Therefore, light of different wavelengths and at different times can
-            be consider seperately. As the surface cannot store the light or
+            be considered seperately. As the surface cannot store the light or
             emit light of other wavelengths.
           </li>
         </ul>
@@ -93,7 +93,7 @@
       <section id="brdf">
         <p class="text-body text">
           A bidirectional reflectance distribution function describes the directional distribution of
-          reflected light from a surface. It is a central part of a rendering program. Lets first consider
+          reflected light from a surface. It is a central part of a rendering program. Let us first consider
           some of the required physical quantities:
         </p>
         <ul>
@@ -129,7 +129,7 @@
         </div>
 
         <p>
-          There is one more quatity we need to define, before we can introduce the BRDF.
+          There is one more quantity we need to define, before we can introduce the BRDF.
           The radiance will relate the irradiance to the direction of the light. As
           we are dealing with three-dimensional space, we use solid angles to describe
           the direction of the light.
@@ -194,9 +194,9 @@
           \[
             dL_r(p, \omega_r)\propto dE(p, \omega_i)
           \]
-          The BRDF of a surface gives us the constant of proportionality for
+          The BRDF of a surface gives us the constant of proportionality for the
           relation above with respect to a point $p$ with incident light from the direction $\omega_i$
-          and reflected light exiting in the direction $\omega_r$. The BRDF is
+          and reflected light exiting in the direction $\omega_r$. The BRDF
           returns the ratio of differential reflected radiance to differential incident irradiance:
           \[
             f(p, \omega_r, \omega_i) = \frac{dL_r(p, \omega_r)}{dE(p, \omega_i)}
@@ -233,15 +233,13 @@
 </div>
 
 <footer>
-  <h3 class = "text-center">References</h3>
+  <h3 style="text-align:center; font-weight:300">References</h3>
   <ol>
     <li id = "Pharr54"  class = "spaced">
-      Pharr, M., & Humphreys, Greg, Ph. D. (2016). 5.4 Radiometry. In: Physically based rendering :
-      From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.
+      "5.4 Radiometry", in Physically Based Rendering: From Theory to Implementation, 3rd ed., Morgan Kaufmann, 2016, pp. 334-341.
     </li>
     <li id="Pharr56"  class = "spaced">
-      Pharr, M., & Humphreys, Greg, Ph. D. (2016). 5.6 Surface Reflection. In: Physically based rendering :
-      From theory to implementation (3rd ed.). Amsterdam ; London: Morgan Kaufmann.
+      "5.6 Surface Reflection", in Physically Based Rendering: From Theory to Implementation, 3rd ed., Morgan Kaufmann, 2016, pp. 348-350.
     </li>
   </ol>
 </footer>
