@@ -87,7 +87,7 @@ a:hover{
   right: 2.5%;
   bottom: 2.5%;
   text-align: center;
-  background: url("../img/downarrow.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/downarrow.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -96,7 +96,7 @@ a:hover{
 }
 
 .next:hover{
-  background: url("../img/downarrowhover.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/downarrowhover.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -105,14 +105,14 @@ a:hover{
 }
 
 #end-next{
-  background: url("../img/uparrow.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/uparrow.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #end-next:hover{
-  background: url("../img/uparrowhover.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/uparrowhover.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -121,27 +121,11 @@ a:hover{
 }
 
 #intro{
-  background: url("../img/bg-intro.jpg");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/bg-intro.jpg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #5f7bc0;
-}
-
-#topics{
-  background: url("../img/bg-team.jpg");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-#team{
-  background: url("../img/bg-team.jpg");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: rgba(255, 255, 255, 1);
 }
 
 .seperator{
@@ -265,7 +249,7 @@ td{
 #team-1{
   top: 37.5%;
   left: 12.5%;
-  background: url("../cv/img/profileAli.jpg");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/cv/img/profileAli.jpg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -273,7 +257,7 @@ td{
 #team-2{
   top: 37.5%;
   left: 32.5%;
-  background: url("../cv/img/profileClovis.jpg");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/cv/img/profileClovis.jpg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -281,7 +265,7 @@ td{
 #team-3{
   top: 37.5%;
   left: 52.5%;
-  background: url("../cv/img/profile.jpg");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/cv/img/profile.jpg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -289,7 +273,7 @@ td{
 #team-4{
   top: 37.5%;
   left: 72.5%;
-  background: url("../cv/img/indiaphoto.JPG");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/cv/img/indiaphoto.JPG");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
