@@ -98,6 +98,16 @@ li.spaced {
  margin: 10px 0;
 }
 
+ol {
+  counter-reset: o-counter ;
+  list-style-type: none;
+}
+
+ol li::before {
+  content: '[' counter(o-counter) ']  ';
+  counter-increment: o-counter;
+}
+
 li a, .dropbtn {
     display: inline-block;
     color: white;
