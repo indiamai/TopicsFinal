@@ -63,11 +63,11 @@ a:hover{
 .next{
   position: absolute;
   display: block;
-  width: 5%;
-  height: 7.5%;
-  left: 47.5%;
-  right: 47.5%;
-  bottom: 2%;
+  width: 7.5%;
+  height: 10%;
+  left: 90%;
+  right: 2.5%;
+  bottom: 2.5%;
   text-align: center;
   background: url("../img/downarrow.png");
   background-size: auto 100%;
@@ -115,7 +115,7 @@ a:hover{
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(133, 161, 239, 0.6);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 #team{
@@ -123,7 +123,7 @@ a:hover{
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(133, 161, 239, 0.6);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .seperator{
@@ -156,4 +156,80 @@ a:hover{
 
 td{
   text-align: center;
+}
+
+.topics-link{
+  position: absolute;
+  display: block;
+  width: 15%;
+  height: 25%;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: rgba(210,210,210,1);
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 30px 1px #888888;
+  z-index: 1;
+}
+
+.topics-link:hover{
+  transition-duration: 0.3s;
+  background-color: rgba(180,180,180,1);
+}
+
+.topics-link-text{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 1.3em;
+}
+
+#link-1{
+  top: 37.5%;
+  left: 11%;
+}
+#link-2{
+  top: 23%;
+  left: 25%;
+}
+#link-3{
+  top: 52%;
+  left: 25%;
+}
+#link-4{
+  top: 5%;
+  left: 41%;
+  width: 18%;
+  height: 32%;
+}
+#link-5{
+  top: 63%;
+  left: 41%;
+  width: 18%;
+  height: 32%;
+}
+#link-6{
+  top: 23%;
+  left: 60%;
+}
+#link-7{
+  top: 52%;
+  left: 60%;
+}
+#link-8{
+  top: 37.5%;
+  left: 74%;
+}
+
+#topics-back{
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: 70%;
+  left: 10%;
+  top: 15%;
+  z-index: 0;
+  opacity: 0.3;
 }
