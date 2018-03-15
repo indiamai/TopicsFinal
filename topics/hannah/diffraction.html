@@ -63,9 +63,9 @@
         <section id = "diffraction">
         <h2> Rendering Diffraction </h2>
         <p>
-          In general, surfaces in are not perfectly smooth. When the details
+          In general, surfaces are not perfectly smooth. When the details
           on the surface have a size similar to the wavelenth of light (visible light
-          has a wavelength of 380 to 780nm) diffraction can occur and cause the surface
+          has a wavelength of 380nm to 780nm) diffraction can occur and cause the surface
           to appear in different colors when viewed from different angles, i.e. iridescence.
           A common example are compact discs.
         </p>
@@ -101,7 +101,7 @@
              b(x-x_n, y - y_m)
           \]
           Here $x_n = n \; \Delta x$ is evenly spaced where $\Delta x$ is the distance
-          between the $x$ locations and $y_m$ is given by a Poisson distribution specified
+          between the $x$ locations. $y_m$ is given by a Poisson distribution specified
           by the density of the bumps on the CD surface. $b$ is the bump function:
           \[
             b(x,y) = h_0 \; g\left(\frac{x}{a}\right)\; rect\left(\frac{x}{a}\right) \;rect\left(\frac{y}{b}\right)
@@ -113,7 +113,7 @@
           suffices.
         </p>
         <p>
-          Using Fourier transforms, <a href="#stam">Stam</a> could analytically derive a
+          Using <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html#fouriertransform" >Fourier transforms</a>, <a href="#stam">Stam</a> could analytically derive a
           <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html">BRDF</a> to render diffraction on a CD surface.
         </p>
         <div class="imagebox" style="width:60%">
@@ -193,29 +193,25 @@
 </div>
 
 <footer>
-  <h3 class = "text-center">References</h3>
+  <h3 class = "text-center" style="font-weight:300">References</h3>
   <ol>
     <li id= "cd_micro" class="spaced">
-      https://en.wikipedia.org/wiki/File:Afm_cd-rom.jpg
+      https://en.wikipedia.org/wiki/File:Afm_cd-rom.jpg. [Accessed: 15- Mar- 2018].
     </li>
     <li id= "cd_color" class="spaced">
-      https://commons.wikimedia.org/wiki/File:CD-ROM.png
+      https://commons.wikimedia.org/wiki/File:CD-ROM.png. [Accessed: 15- Mar- 2018].
     </li>
     <li id= "xeno_nat" class="spaced">
-      https://commons.wikimedia.org/wiki/File:Young_sunbeam_snake_from_Thailand.JPG
+      https://commons.wikimedia.org/wiki/File:Young_sunbeam_snake_from_Thailand.JPG. [Accessed: 15- Mar- 2018].
     </li>
     <li id="stam" class="spaced">
-      Stam, J. (1999). Diffraction shaders. Proceedings of the 26th Annual Conference on Computer Graphics and Interactive Techniques, 101-110.
-    </li>
+      Stam J., "Diffraction Shaders", in Proceedings of the 26th Annual Conference on Computer Graphics and Interactive Techniques, 1999, pp. 1-26.    </li>
     <li id="xeno" class="spaced">
-      Dhillon, Teyssier, Single, Gaponenko, Milinkovitch, & Zwicker. (2014). Interactive Diffraction from Biological Nanostructures. Computer Graphics Forum, 33(8), 177-188.
-    </li>
+      D. Dhillon, J. Teyssier, M. Single, I. Gaponenko, M. Milinkovitch and M. Zwicker, "Interactive Diffraction from Biological Nanostructures", Computer Graphics Forum, vol. 33, no. 8, pp. 177-188, 2014.    </li>
     <li id="xeno2" class="spaced">
-      Dhillon, D., & Ghosh, A. (2016). Efficient surface diffraction renderings with Chebyshev approximations. SIGGRAPH ASIA 2016 Technical Briefs, 1-4.
-    </li>
+      D. Dhillon, A. Ghosh, "Efficient surface diffraction renderings with Chebyshev approximations", in SIGGRAPH ASIA 2016 Technical Briefs, pp. 1-4.    </li>
     <li id = "PARDE" class="space">
-      Toisoul, A, & Ghosh, A. (2017). Practical Acquisition and Rendering of Diffraction Effects in Surface Reflectance, 1557-7368.
-    </li>
+      A. Toisoul and A. Ghosh, "Practical Acquisition and Rendering of Diffraction Effects in Surface Reflectance", ACM Transactions on Graphics, vol. 36, no. 5, pp. 1-16, 2017.    </li>
   </ol>
 </footer>
 
