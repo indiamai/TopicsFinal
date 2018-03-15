@@ -155,7 +155,7 @@ li.dropdown {
   width: 9%;
   height: 100%;
   text-align: center;
-  background: url("../../img/downarrow.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/downarrow.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -164,7 +164,7 @@ li.dropdown {
 }
 
 .next:hover{
-  background: url("../../img/downarrowhover.png");
+  background: url("https://www.doc.ic.ac.uk/~imm1117/img/downarrowhover.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
