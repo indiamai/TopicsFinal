@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Ray vs Wave based</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../img/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.doc.ic.ac.uk/~imm1117/">Home</a></li>
+        <li>
+        <li class="dropdown">
+          <a class="dropbtn">Menu</a>
+          <div class="dropdown-content">
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/clovis/context.html">Context</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html">Rendering Methods</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html">Physics</a>
+          </div>
+        </li>
+      </ul>
+      <p class="navbar-text" id="navbar-centre">Physics Based Rendering</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../../cv/IndiaCV/index.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
+      <h1>Difficulties</h1>
+      <hr>
+     <p>
+     There are still problems with the methods we have discussed. For example, the BRDF model requires complex computations, meaning it cannot be implemented sufficiently in real-time. Simplifications of the model to avoid these calculations lose generality, or require large amounts of input information, as is the case with the Wave-BSDF.
+     </p>
+     <p>
+       We also have some issues with rendering natural structures vs man-made ones. It is likely more efficient to represent a man-made structure computationally, as it may be repetitive and/or predictable in a way that can be easily represented by a function. Natural structures, however, are much less predictable. They can be modelled by randomly distributed functions, but this won’t be able to precisely represent any given natural structure. A given natural structure could be precisely represented by giving input describing the surface, however the difficulty is then in obtaining this information, which most likely will require some specialist equipment.
+     </p>
+     <div class="imagebox" style="width:70%">
+       <img src="https://www.doc.ic.ac.uk/~imm1117/img/india/renderVSreal.png" alt="render and read">
+       <div class="container" style="width:100%">
+         <hr>
+         <p> (a) is the real image, (b) the rendered one </p>
+       </div>
+     </div>
+     <hr>
+    </div>
+
+
+    <div class="col-sm-2 sidenav">
+      <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html"><h3><u>BRDF</u></h3></a>
+      <br>
+      <a href="IndiaSection.html"><h3><u>Rays vs Waves</u></h3></a>
+      <br>
+      <a href="WaveBRDF.html"><h3><u>Wave BSDF</u></h3></a>
+      <br>
+      <a href="SpectralRendering.html"><h3><u>Spectral Rendering</u></h3></a>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <h3>References</h3>
+  <p>
+   D.  Johnston and P.  Tarjan, "Ray-Tracing Interference and diffraction", Stanford, 2006.
+ </p>
+ <p>
+S.  Siltanen, T.  Lokki and L.  Savioja, "Rays or Waves? Understanding the Strengths and Weaknesses of Computational Room Acoustics Modeling Techniques", in he International Symposium on Room Acoustics (ISRA2010), Melbourne, Australia, 2010, p. Paper O5a.
+ </p>
+ <p>
+"Wave Equation | Brilliant Math & Science Wiki", Brilliant.org, 2018. [Online]. Available: https://brilliant.org/wiki/wave-equation/. [Accessed: 09- Mar- 2018].
+ </p>
+ <p>
+ J.  Kajiya, "The rendering equation", Proceedings of the 13th annual conference on Computer graphics and interactive techniques  - SIGGRAPH '86, 1986.
+</p>
+<p>
+T.  Cuypers, T.  Haber, P.  Bekaert, S.  Oh and R.  Raskar, "Reflectance model for diffraction", ACM Transactions on Graphics, vol. 31, no. 5, pp. 1-11, 2012.
+</p>
+<p>
+  J.  Stam, "Diffraction shaders", Proceedings of the 26th annual conference on Computer graphics and interactive techniques  - SIGGRAPH '99, 1999.
+</p>
+<p>
+  "Spectral rendering", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Spectral_rendering. [Accessed: 14- Mar- 2018].
+</p>
+
+
+
+</footer>
+
+</body>
+</html>
