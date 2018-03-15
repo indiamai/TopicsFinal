@@ -2,14 +2,15 @@
 <!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
 <html lang="en">
 <head>
-  <title>Concepts Behind Rendering Diffraction</title>
+  <!-- Add your title -->
+  <title>Context</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../../img/icon.png">
+  <!-- replace with our own css? -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- mathjax needed to display equations, just write them like in LaTeX-->
+  <!-- find the formatting.css file and replace with correct link -->
   <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
-  <link rel="stylesheet" type="text/css" href="../../css/topics/clovis/context.css">
+  <!-- mathjax needed to display equations, just write them like in LaTeX-->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
@@ -31,20 +32,20 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Home</a></li> -->
         <li><a href="https://www.doc.ic.ac.uk/~imm1117/">Home</a></li>
         <li>
-        <li class="dropdown">
-          <a class="dropbtn">Menu</a>
-          <div class="dropdown-content">
-            <a href="../ali/physics.html">Physics</a>
-            <a href="../hannah/brdf.html">BRDF</a>
-            <a href="../india/IndiaSection.html">Rays and Waves</a>
-          </div>
+          <li class="dropdown">
+            <a class="dropbtn">Menu</a>
+            <div class="dropdown-content">
+              <a href="../ali/physics.html">Physics</a>
+              <a href="../hannah/brdf.html">BRDF</a>
+              <a href="../india/IndiaSection.html">Rays and Waves</a>
+            </div>
+          </li>
         </li>
       </ul>
-      <p class="navbar-text" id="navbar-centre">Physics Based Rendering</p>
       <ul class="nav navbar-nav navbar-right">
+        <!-- add a link to your resume page -->
         <li><a href="https://www.doc.ic.ac.uk/~imm1117/cv/index.html">About</a></li>
       </ul>
     </div>
@@ -53,29 +54,54 @@
 
 <div class="container-fluid text-center">
   <div class="row content" >
-    <div id="main-body">
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
       <h1 id="main-body-top" class="text-top text">Context</h1>
-      <img src="../../img/clovis/snakeskin.jpg" id="snakeskin" class="box">
-        <div id ="textbox1" class="textbox box">
-          <p id="main-body-body" class="text-body text">
-Physics based rendering is extensively used in modern technlogy, particulary graphics where a realistic depiction is the key. To make it as realistic as possible, all aspects of diffraction should be considered. A particular physical phenomum which should be considered is diffraction. As it has many effects in reality. Take for example a snakeskin, these look very particular due to diffraction. Researchers here at Imperial College London are looking into new ways to improve the rendition of these. As can be seen above, the rendition is much improved. Using Chebyshev approximations, the method reduces the runtime memory footprint, allowing greater photorealism for less computation.
-The effect of diffraction can also be seen for insect wings. The particular natural engineering behind them creates quite a strange effect. Although varying between species, usually they have bio-nano-engineered optically active structures. They integrate three complex design principles: alternative lamellae layers, Christmas tree-like shape, and zigzag pattern of the ridges. This creates quite a challenge for engineers to work methods to render this.
-          </p>
+      <div class="imagebox" style="width:95%">
+        <img src="../../img/clovis/snakeskin.jpg" id="snakeskin" style="width:100%">
+        <div class="container" style="width:100%">
+          <hr>
+          <p> clovis caption</p>
         </div>
-      <img src="../../img/clovis/insectwings.jpg" id="insectwings" class="box">
-      <img src="../../img/clovis/lensflare.jpg" id="lensflare" class="box">
-        <div id ="textbox2" class="textbox box">
-          <p id="main-body-body" class="text-body text">
+      </div>
+      <p>
+        Physics based rendering is extensively used in modern technlogy, particulary graphics where a realistic depiction is the key. To make it as realistic as possible, all aspects of diffraction should be considered. A particular physical phenomum which should be considered is diffraction. As it has many effects in reality. Take for example a snakeskin, these look very particular due to diffraction. Researchers here at Imperial College London are looking into new ways to improve the rendition of these. As can be seen above, the rendition is much improved. Using Chebyshev approximations, the method reduces the runtime memory footprint, allowing greater photorealism for less computation.
+        The effect of diffraction can also be seen for insect wings. The particular natural engineering behind them creates quite a strange effect. Although varying between species, usually they have bio-nano-engineered optically active structures. They integrate three complex design principles: alternative lamellae layers, Christmas tree-like shape, and zigzag pattern of the ridges. This creates quite a challenge for engineers to work methods to render this.
+      </p>
+      <div class="imagebox" style="width:90%">
+        <img src="https://www.doc.ic.ac.uk/~imm1117/img/clovis/insectwings.jpg" style="float:left; width:30%; margin: 2%">
+        <img src="https://www.doc.ic.ac.uk/~imm1117/img/clovis/lensflare.jpg" style="float:right; width:62%; margin: 2%">
+        <p style="clear: both;">
+        <div class="container" style="width:100%">
+          <hr>
+          <p>clovis caption</p>
+        </div>
+      </div>
+      <p>
 There are quite a lot of phonemena which affect a viewer, while not specifcally rendering, they must be considered for a realistic view in computer graphics. Many photographers will have encountered lens flare, an effect which is created by light outside of the lens view diffracting round the lens edge into the sensor. This can dramatically alter a view as can be seen. Another particular effect is a glory. Quite a unique effect where light diffracts through water droplets around an object, often creating a rainbow pattern or a shadow in a halo around objects. All these effects must be considered in physics based rendering, in order to make graphics as realistic as possible. This is very important in modern technology due to the extensive use of graphics such as in CAD, Games, VR and more.
-          </p>
+      </p>
+
+      <div class="imagebox" style="width:95%">
+        <img src="https://www.doc.ic.ac.uk/~imm1117/img/clovis/glory.jpg" >
+        <div class="container" style="width:100%">
+          <hr>
+          <p> clovis caption</p>
         </div>
-      <img src="../../img/clovis/glory.jpg" id="glory" class="box">
+      </div>
+    </div>
+
+
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
     </div>
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <h3>References</h3>
+<footer>
+  <h3 class="text-center">References</h3>
   <p>
     <a href="http://wp.doc.ic.ac.uk/rgi/project/efficient-surface-diffraction-renderings-with-chebyshev-approximations/">
       http://wp.doc.ic.ac.uk/rgi/project/efficient-surface-diffraction-renderings-with-chebyshev-approximations/</a> [Accessed: 14- Mar- 2018].
