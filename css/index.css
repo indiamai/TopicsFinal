@@ -115,6 +115,7 @@ a:hover{
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgba(133, 161, 239, 0.6);
 }
 
 #team{
