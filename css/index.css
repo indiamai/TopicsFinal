@@ -5,7 +5,16 @@ body{
 }
 
 h1,h2,h3,p{
-  font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,p{
+    font-weight: 100;
+}
+
+h2,h3{
+    font-weight: 400;
 }
 
 a{
@@ -55,6 +64,14 @@ a:hover{
 .text-bottom{
   font-size:2em;
   color: #000000;
+}
+
+#intro-body-top{
+  font-weight: bold;
+}
+
+#intro-body-bottom{
+  font-weight: bold;
 }
 
 .extern{
@@ -164,10 +181,8 @@ td{
   display: block;
   text-align: center;
   vertical-align: middle;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 2px;
   box-shadow: 0 0 30px 1px #888888;
+  border-radius: 50%;
   z-index: 1;
 }
 
@@ -175,11 +190,16 @@ td{
   width: 15%;
   height: 25%;
   background-color: rgba(210,210,210,1);
+  border-style: solid;
+  border-width: 2px;
 }
 
 .team-link{
-  width: 15%;
-  height: 25%;
+  width: 15vw;
+  height: 15vw;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #888888;
 }
 
 .circle-link:hover{
@@ -201,7 +221,7 @@ td{
 }
 
 .team-link-text{
-  top: 70%;
+  top: 75%;
   width: 20%;
 }
 
@@ -246,7 +266,7 @@ td{
   top: 37.5%;
   left: 12.5%;
   background: url("../cv/img/profileAli.jpg");
-  background-size: auto 130%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -254,7 +274,7 @@ td{
   top: 37.5%;
   left: 32.5%;
   background: url("../cv/img/profileClovis.jpg");
-  background-size: auto 130%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -262,7 +282,7 @@ td{
   top: 37.5%;
   left: 52.5%;
   background: url("../cv/img/profile.jpg");
-  background-size: auto 130%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -270,25 +290,21 @@ td{
   top: 37.5%;
   left: 72.5%;
   background: url("../cv/img/indiaphoto.JPG");
-  background-size: auto 130%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #teamtext-1{
-  top: 67.5%;
   left: 20%;
 }
 #teamtext-2{
-  top: 67.5%;
   left: 40%;
 }
 #teamtext-3{
-  top: 67.5%;
   left: 60%;
 }
 #teamtext-4{
-  top: 67.5%;
   left: 80%;
 }
 
